@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 
 const AnimatedBackground = () => {
   const elements = [
-    { size: "15vw", color: "bg-primary/10", delay: 0 },
-    { size: "25vw", color: "bg-blue-500/5", delay: 5 },
-    { size: "20vw", color: "bg-purple-500/5", delay: 2 },
-    { size: "30vw", color: "bg-primary/5", delay: 8 },
-    { size: "18vw", color: "bg-orange-500/5", delay: 3 },
-    { size: "22vw", color: "bg-pink-500/5", delay: 6 }
+    { size: "25vw", color: "bg-primary/20", delay: 0 },
+    { size: "35vw", color: "bg-blue-500/15", delay: 5 },
+    { size: "30vw", color: "bg-purple-500/15", delay: 2 },
+    { size: "40vw", color: "bg-primary/15", delay: 8 },
+    { size: "28vw", color: "bg-orange-500/15", delay: 3 },
+    { size: "32vw", color: "bg-pink-500/15", delay: 6 }
   ];
 
   return (
@@ -15,7 +15,7 @@ const AnimatedBackground = () => {
       {elements.map((element, i) => (
         <motion.div
           key={i}
-          className={`absolute blur-xl ${element.color} rounded-full`}
+          className={`absolute blur-3xl ${element.color} rounded-full`}
           style={{
             width: element.size,
             height: element.size,
@@ -23,13 +23,13 @@ const AnimatedBackground = () => {
             top: `${Math.random() * 100}%`,
           }}
           animate={{
-            scale: [1, 1.2, 1],
-            x: [0, Math.random() * 200 - 100, 0],
-            y: [0, Math.random() * 200 - 100, 0],
-            opacity: [0.5, 0.8, 0.5],
+            scale: [1, 1.5, 1],
+            x: [0, Math.random() * 300 - 150, 0],
+            y: [0, Math.random() * 300 - 150, 0],
+            opacity: [0.3, 0.7, 0.3],
           }}
           transition={{
-            duration: 20 + Math.random() * 10,
+            duration: 15 + Math.random() * 10,
             delay: element.delay,
             repeat: Infinity,
             ease: "easeInOut",
