@@ -132,7 +132,6 @@ const Experience = () => {
     const flags = ["🇨🇭", "🇨🇿", "🇺🇸", "🇪🇪", "🇩🇪", "🇬🇧", "🇸🇰"];
     const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
 
-    // Function to cycle through flags
     const cycleFlag = () => {
         setCurrentFlagIndex((prev) => (prev + 1) % flags.length);
     };
@@ -151,7 +150,7 @@ const Experience = () => {
                     repeat: Infinity,
                 }}
                 onClick={() => setIsVisible(true)}
-                onAnimationRepeat={cycleFlag}
+                onAnimationComplete={cycleFlag}
                 style={{
                     background: `linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3))`,
                 }}
