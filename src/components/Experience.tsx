@@ -1,6 +1,7 @@
 import {Card, CardContent} from "@/components/ui/card";
 import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
+import { useState } from "react";
 
 interface ExperienceItem {
     title: string;
@@ -127,10 +128,51 @@ const experiences: ExperienceItem[] = [
 ];
 
 const Experience = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const flags = ["🇨🇭", "🇨🇿", "🇺🇸", "🇪🇪", "🇩🇪", "🇬🇧", "🇸🇰"];
+    const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
+
+    // Function to cycle through flags
+    const cycleFlag = () => {
+        setCurrentFlagIndex((prev) => (prev + 1) % flags.length);
+    };
+
+    if (!isVisible) {
+        return (
+            <motion.button
+                className="fixed z-50 px-6 py-3 rounded-full text-primary font-bold text-lg shadow-lg"
+                animate={{
+                    x: ["0%", "80%", "80%", "0%", "0%"],
+                    y: ["0%", "0%", "80%", "80%", "0%"],
+                }}
+                transition={{
+                    duration: 20,
+                    ease: "linear",
+                    repeat: Infinity,
+                }}
+                onClick={() => setIsVisible(true)}
+                onAnimationRepeat={cycleFlag}
+                style={{
+                    background: `linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3))`,
+                }}
+            >
+                <span className="relative z-10">My Experience {flags[currentFlagIndex]}</span>
+            </motion.button>
+        );
+    }
+
     return (
         <section className="py-12 px-4 relative">
             <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-12 text-white">Experience</h2>
+                <div className="flex justify-between items-center mb-12">
+                    <h2 className="text-3xl font-bold text-center text-white">Experience</h2>
+                    <button 
+                        onClick={() => setIsVisible(false)} 
+                        className="text-primary hover:text-primary/80 transition-colors"
+                    >
+                        Close
+                    </button>
+                </div>
                 <ScrollArea className="h-[600px] rounded-md">
                     <div className="grid gap-10 p-10">
                         {experiences.map((exp, index) => (
