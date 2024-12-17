@@ -5,10 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: "https://danyk20.github.io/cybertraverse-web/",
-    port: 8080,
-  },
+  base: "/cybertraverse-web",
   plugins: [
     react(),
     mode === 'development' &&
