@@ -16,11 +16,14 @@ const Interests = () => {
         />
 
         {/* Overlay content */}
-        <div className="relative py-20">
+        <div className="relative py-4">
             <Experience />
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-white">
-              Areas of Expertise
+            <h2 className="text-3xl font-bold text-center mb-12 text-white rounded-full">
+                <p className="rounded-full inline-block backdrop-blur-sm p-2">
+                    Areas of Interest
+                </p>
+
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <InterestCard
