@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
 interface ExperienceItem {
@@ -106,41 +107,43 @@ const Experience = () => {
     <section className="py-12 px-4 relative">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-        <div className="grid gap-4">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-            >
-              <Card className="relative overflow-hidden hover:shadow-lg transition-shadow">
-                <div
-                  className={`absolute left-0 top-0 w-1 h-full ${
-                    exp.type === "education" ? "bg-primary" : "bg-blue-500"
-                  }`}
-                />
-                <CardContent className="p-4">
-                  <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
-                    <div className="flex-1">
-                      <div className="flex items-start justify-between">
-                        <h3 className="text-lg font-semibold">{exp.title}</h3>
-                        <span className="text-sm text-muted-foreground bg-card px-2 py-0.5 rounded-full ml-2 whitespace-nowrap">
-                          {exp.period}
-                        </span>
+        <ScrollArea className="h-[600px] rounded-md border">
+          <div className="grid gap-4 p-4">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <Card className="relative overflow-hidden hover:shadow-lg transition-shadow">
+                  <div
+                    className={`absolute left-0 top-0 w-1 h-full ${
+                      exp.type === "education" ? "bg-primary" : "bg-blue-500"
+                    }`}
+                  />
+                  <CardContent className="p-4">
+                    <div className="flex flex-col sm:flex-row justify-between items-start gap-2">
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between">
+                          <h3 className="text-lg font-semibold">{exp.title}</h3>
+                          <span className="text-sm text-muted-foreground bg-card px-2 py-0.5 rounded-full ml-2 whitespace-nowrap">
+                            {exp.period}
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-2">
+                          {exp.organization} • {exp.location}
+                        </p>
+                        <p className="text-sm text-muted-foreground">{exp.description}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-2">
-                        {exp.organization} • {exp.location}
-                      </p>
-                      <p className="text-sm text-muted-foreground">{exp.description}</p>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </ScrollArea>
       </div>
     </section>
   );
