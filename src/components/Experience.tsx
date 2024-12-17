@@ -1,7 +1,7 @@
 import {Card, CardContent} from "@/components/ui/card";
 import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
-import { useState } from "react";
+import {useCallback, useEffect, useState} from "react";
 
 interface ExperienceItem {
     title: string;
@@ -131,86 +131,113 @@ const Experience = () => {
     const [isVisible, setIsVisible] = useState(false);
     const flags = ["🇨🇭", "🇨🇿", "🇺🇸", "🇪🇪", "🇩🇪", "🇬🇧", "🇸🇰"];
     const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
+    const [scaleUp, setScaleUp] = useState(false);
 
-    const cycleFlag = () => {
-        setCurrentFlagIndex((prev) => (prev + 1) % flags.length);
-    };
+    const cycleFlag = useCallback(() => {
+        setCurrentFlagIndex((prevIndex) => (prevIndex + 1) % flags.length);
+    }, [flags.length]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setScaleUp(true);
+            setTimeout(() => {}, 1250)
+            cycleFlag();
+            setTimeout(() => {
+                setScaleUp(false);
+            }, 250)
+        }, 2000);
+
+        return () => clearInterval(interval); // Clean up on unmount
+    }, [cycleFlag]);
+
 
     if (!isVisible) {
         return (
-            <motion.button
-                className="fixed z-50 px-6 py-3 rounded-full text-primary font-bold text-lg shadow-lg"
-                animate={{
-                    x: ["0%", "80%", "80%", "0%", "0%"],
-                    y: ["0%", "0%", "80%", "80%", "0%"],
-                }}
-                transition={{
-                    duration: 20,
-                    ease: "linear",
-                    repeat: Infinity,
-                }}
-                onClick={() => setIsVisible(true)}
-                onAnimationComplete={cycleFlag}
-                style={{
-                    background: `linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3))`,
-                }}
-            >
-                <span className="relative z-10">My Experience {flags[currentFlagIndex]}</span>
-            </motion.button>
+            <div className="relative w-screen h-screen flex items-center justify-center overflow-hidden">
+                <motion.button
+                    className="rounded-full text-3xl font-bold text-center text-white inset-0 backdrop-blur-lg flex items-center justify-center space-x-2" // Added space-x-2 for spacing between text and image
+                    animate={{
+                        x: ["-10%", "180%", "-10%"],
+                        y: ["-350%", "-460%", "-350%"],
+                        scale: scaleUp ? 1 : 1.3,
+                    }}
+                    transition={{
+                        duration: 20,
+                        ease: "linear",
+                        repeat: Infinity,
+                        scale: {
+                            duration: 0.5,
+                        },
+                    }}
+                    onClick={() => {
+                        setIsVisible(true);
+                    }}
+                    style={{
+                        background: "opacity-70",
+                    }}
+                >
+                    <img src="public/roll_down.png" alt="Roll Down" className="w-6 h-6"/>
+                    <span className="relative z-10">My Experience {flags[currentFlagIndex]}</span>
+                    <img src="public/roll_down.png" alt="Roll Down" className="w-6 h-6"/>
+                </motion.button>
+            </div>
         );
     }
 
     return (
-        <section className="py-12 px-4 relative">
-            <div className="max-w-5xl mx-auto">
-                <div className="flex justify-between items-center mb-12">
-                    <h2 className="text-3xl font-bold text-center text-white">Experience</h2>
-                    <button 
-                        onClick={() => setIsVisible(false)} 
-                        className="text-primary hover:text-primary/80 transition-colors"
-                    >
-                        Close
-                    </button>
-                </div>
-                <ScrollArea className="h-[600px] rounded-md">
-                    <div className="grid gap-10 p-10">
-                        {experiences.map((exp, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{opacity: 0, y: 10}}
-                                whileInView={{opacity: 0.7, y: 0}}
-                                viewport={{once: true}}
-                                transition={{duration: 0.3, delay: index * 0.05}}
-                            >
-                                <Card className="relative overflow-hidden hover:shadow-lg transition-shadow">
-                                    <div
-                                        className={`absolute left-0 top-0 w-1 h-full ${
-                                            exp.type === "education" ? "bg-primary" : "bg-blue-500"
-                                        }`}
-                                    />
-                                    <CardContent className="p-4">
-                                        <div className="flex flex-col sm:flex-row justify-between items-start">
-                                            <div className="flex-1">
-                                                <div className="flex items-start justify-between">
-                                                    <h3 className="text-lg font-semibold">{exp.title}</h3>
-                                                    <span className="text-sm text-gray-300 px-2 py-0.5 rounded-full">
+        <div className="relative w-screen h-screen flex items-center justify-center overflow-hidden">
+            <section className="py-12 px-4 relative">
+                <div className="max-w-5xl mx-auto">
+                    <div className="flex justify-between items-center mb-12">
+                        <h2 className="text-3xl font-bold text-center text-white">Experience</h2>
+                        <button
+                            onClick={() => setIsVisible(false)}
+                            className="text-primary hover:text-primary/80 transition-colors rounded-full bg-gray-700 opacity-70 px-4 py-2"
+                        >
+                            Collapse
+                        </button>
+                    </div>
+                    <ScrollArea className="h-[600px] rounded-md">
+                        <div className="grid gap-10 p-10">
+                            {experiences.map((exp, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{opacity: 0, y: 10}}
+                                    whileInView={{opacity: 0.7, y: 0}}
+                                    viewport={{once: true}}
+                                    transition={{duration: 0.3, delay: index * 0.05}}
+                                >
+                                    <Card className="relative overflow-hidden hover:shadow-lg transition-shadow">
+                                        <div
+                                            className={`absolute left-0 top-0 w-1 h-full ${
+                                                exp.type === "education" ? "bg-primary" : "bg-blue-500"
+                                            }`}
+                                        />
+                                        <CardContent className="p-4">
+                                            <div className="flex flex-col sm:flex-row justify-between items-start">
+                                                <div className="flex-1">
+                                                    <div className="flex items-start justify-between">
+                                                        <h3 className="text-lg font-semibold">{exp.title}</h3>
+                                                        <span
+                                                            className="text-sm text-gray-300 px-2 py-0.5 rounded-full">
                                                         {exp.period}
                                                     </span>
+                                                    </div>
+                                                    <p className="text-sm mb-2 text-gray-300">
+                                                        {exp.organization} • {exp.location}
+                                                    </p>
+                                                    <p className="text-sm text-gray-400">{exp.description}</p>
                                                 </div>
-                                                <p className="text-sm mb-2 text-gray-300">
-                                                    {exp.organization} • {exp.location}
-                                                </p>
-                                                <p className="text-sm text-gray-400">{exp.description}</p>
                                             </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </div>
-                </ScrollArea>
-            </div>
-        </section>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </ScrollArea>
+                </div>
+            </section>
+        </div>
     );
 };
 
