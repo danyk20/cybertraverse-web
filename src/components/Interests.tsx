@@ -16,7 +16,7 @@ const Interests = () => {
         />
 
         {/* Overlay content */}
-        <div className="relative py-20 bg-black bg-opacity-50">
+        <div className="relative py-20">
             <Experience />
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-white">

@@ -128,14 +128,14 @@ const Experience = () => {
                                             <div className="flex-1">
                                                 <div className="flex items-start justify-between">
                                                     <h3 className="text-lg font-semibold">{exp.title}</h3>
-                                                    <span className="text-sm text-muted-foreground bg-card px-2 py-0.5 rounded-full ml-2">
+                                                    <span className="text-sm text-gray-300 px-2 py-0.5 rounded-full">
                                                         {exp.period}
                                                     </span>
                                                 </div>
-                                                <p className="text-sm text-muted-foreground mb-2">
+                                                <p className="text-sm mb-2 text-gray-300">
                                                     {exp.organization} • {exp.location}
                                                 </p>
-                                                <p className="text-sm text-muted-foreground ">{exp.description}</p>
+                                                <p className="text-sm text-gray-400">{exp.description}</p>
                                             </div>
                                         </div>
                                     </CardContent>
