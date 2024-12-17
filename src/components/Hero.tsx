@@ -20,7 +20,7 @@ const Hero = () => {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Hi, I'm <span className="text-primary">John Doe</span>
+            Hi, I'm <span className="text-primary">Daniel Košč</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
             IT Professional specializing in Cybersecurity, Finance, and exploring the world one commit at a time.
