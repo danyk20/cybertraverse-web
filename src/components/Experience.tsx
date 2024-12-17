@@ -132,6 +132,19 @@ const Experience = () => {
     const flags = ["🇨🇭", "🇨🇿", "🇺🇸", "🇪🇪", "🇩🇪", "🇬🇧", "🇸🇰"];
     const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
     const [scaleUp, setScaleUp] = useState(false);
+    const [width, setWidth] = useState<number>(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    const isMobile = width <= 768;
 
     const cycleFlag = useCallback(() => {
         setCurrentFlagIndex((prevIndex) => (prevIndex + 1) % flags.length);
@@ -157,8 +170,8 @@ const Experience = () => {
                 <motion.button
                     className="rounded-full text-3xl font-bold text-center text-white inset-0 backdrop-blur-lg flex items-center justify-center space-x-2" // Added space-x-2 for spacing between text and image
                     animate={{
-                        x: ["-10%", "180%", "-10%"],
-                        y: ["-350%", "-460%", "-350%"],
+                        x: ["0%", isMobile ? "0%": "180%", "0%"],
+                        y: ["-350%", isMobile ? "-350" : "-460%", "-350%"],
                         scale: scaleUp ? 1 : 1.3,
                     }}
                     transition={{
