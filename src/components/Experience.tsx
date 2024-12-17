@@ -13,92 +13,116 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
     {
-        title: "Long-term & Short-term Internship",
+        title: "Technical Internship",
         organization: "CERN",
-        location: "Switzerland",
-        period: "2023",
+        location: "Switzerland 🇨🇭",
+        period: "2024-2025",
         type: "work",
-        description: "Contributed to the development of particle detector control systems and data acquisition software. Implemented real-time monitoring solutions for experimental setups."
+        description: "Managed deployment processes and optimized messaging systems using Kubernetes, Docker, and RabbitMQ. Developed and maintained C++ solutions for data acquisition and monitoring at CERN CMS BRIL."
     },
     {
-        title: "Cybersecurity Internship - Firewall Tool Development",
+        title: "Cybersecurity Internship",
         organization: "Hilti",
-        location: "Switzerland",
-        period: "2022",
+        location: "Switzerland 🇨🇭",
+        period: "2023-2024",
         type: "work",
-        description: "Developed an automated firewall configuration tool that reduced manual configuration time by 70%. Implemented security best practices and compliance checks."
+        description: "Designed and implemented an automated firewall analysis tool leveraging Python and Azure cloud technologies to enhance network security and efficiency."
+    },
+    {
+        title: "Summer Student Program",
+        organization: "CERN",
+        location: "Switzerland 🇨🇭",
+        period: "2023",
+        type: "work",
+        description: "Developed Python-based simulations comparing RESTful APIs and Message-Oriented Middleware (MOM), deploying containerized applications with Kubernetes, Docker, and RabbitMQ."
     },
     {
         title: "Cybersecurity Internship - Penetration Test Automation",
-        organization: "Technické sítě Brno",
-        location: "Switzerland",
+        organization: "Technické sítě Brno ",
+        location: "Czech Republic 🇨🇿",
+        period: "2023",
+        type: "work",
+        description: "Created automated penetration testing scripts that identified vulnerabilities on Windows servers and desktops using Python and Metasploit"
+    },
+    {
+        title: "IT Administrator",
+        organization: "True Friends",
+        location: "USA 🇺🇸",
         period: "2022",
         type: "work",
-        description: "Created automated penetration testing scripts that identified vulnerabilities in network infrastructure. Improved security testing efficiency by 40%."
+        description: "Managed IT infrastructure for multiple facilities, resolved Wi-Fi issues, performed end-to-end PC setups (hardware and software), implemented networking solutions, and provided technical support to 100+ users."
     },
     {
-        title: "IT Administrator Internship",
-        organization: "True Friends",
-        location: "USA",
-        period: "2021",
-        type: "work",
-        description: "Managed IT infrastructure for multiple facilities, implemented new backup solutions, and provided technical support to 200+ users."
-    },
-    {
-        title: "ISEP Studies & Internship - Student Tutoring and Summer Research",
+        title: "ISEP Internship - Summer Research",
         organization: "Truman State University",
-        location: "USA",
-        period: "2021",
+        location: "USA 🇺🇸",
+        period: "2022",
         type: "education",
-        description: "Conducted research in machine learning applications. Tutored undergraduate students in computer science courses and achieved 95% positive feedback."
+        description: "Developed iOS applications integrating GPS, open APIs, multithreading, and sound alarm to deliver high-performance mobile solutions."
+    },
+    {
+        title: "ISEP Internship - Student Tutoring ",
+        organization: "Truman State University",
+        location: "USA 🇺🇸",
+        period: "2022",
+        type: "work",
+        description: "Provided C++ and Java tutoring sessions to enhance programming fundamentals and problem-solving skills for students."
+    },
+    {
+        title: "ISEP Studies",
+        organization: "Truman State University",
+        location: "USA 🇺🇸",
+        period: "2022",
+        type: "education",
+        description: "Improved Java programming skills, contributed to an AI-based weather detection system, mastered advanced networking concepts, and significantly enhanced Russian language proficiency."
     },
     {
         title: "Simulation Engineer Internship",
         organization: "Estonian Aviation Academy",
-        location: "Estonia",
-        period: "2020",
+        location: "Estonia 🇪🇪",
+        period: "2021",
         type: "work",
-        description: "Developed flight simulation software modules and contributed to training program improvements. Enhanced simulation accuracy by 25%."
+        description: "Conducted simulations using Simio software to optimize aviation workflows and improve operational efficiency."
     },
     {
         title: "Master in Software Engineering",
         organization: "Masaryk University",
-        location: "Czech Republic",
-        period: "2020-2023",
+        location: "Czech Republic 🇨🇿",
+        period: "2021-2024",
         type: "education",
-        description: "Specialized in cybersecurity and distributed systems. Completed thesis on advanced intrusion detection systems using machine learning."
+        description: "Gained expertise in software design patterns, clean code practices, enterprise Java with Maven, network and digital forensics, machine learning, and one-chip controller programming."
     },
     {
         title: "Erasmus Program",
         organization: "HTWG",
-        location: "Germany",
-        period: "2019-2020",
+        location: "Germany 🇩🇪",
+        period: "2020-2021",
         type: "education",
-        description: "Exchange program focusing on embedded systems and IoT development. Participated in international research projects."
+        description: "Contributed to AI and 3D computer vision projects, improving teamwork capabilities in software development and advancing German language proficiency."
     },
     {
         title: "Bachelor in Computer Systems & Communication",
         organization: "Masaryk University",
-        location: "Czech Republic",
-        period: "2017-2020",
+        location: "Czech Republic 🇨🇿",
+        period: "2018-2021",
         type: "education",
-        description: "Focused on computer networks and system administration. Graduated with honors and completed practical projects in network security."
+        description: "Strengthened knowledge in algorithms, data structures, cybersecurity through competitive games, operating systems, and video editing."
     },
     {
         title: "PC Hardware & Software Fixing Internship",
         organization: "PC Connect",
-        location: "UK",
-        period: "2016",
+        location: "United Kingdom 🇬🇧",
+        period: "2017",
         type: "work",
-        description: "Diagnosed and repaired hardware/software issues for customers. Maintained a 98% customer satisfaction rate."
+        description: "Diagnosed and resolved complex hardware and software issues for customer PCs and laptops, ensuring high-quality communication and support."
     },
     {
-        title: "High School Diploma",
-        organization: "High School of Electrotechnic",
-        location: "Slovakia",
-        period: "2013-2017",
+        title: "Information and Network Technologies",
+        organization: "High School of Electrical Engineering",
+        location: "Slovakia 🇸🇰",
+        period: "2014-2018",
         type: "education",
-        description: "Specialized in electronics and computer technology. Participated in national programming competitions."
+        description: "Acquired foundational knowledge in electronics and electrotechnics, earned Cisco Certified Network Associate (CCNA) Routing and Switching certification."
     }
 ];
 
