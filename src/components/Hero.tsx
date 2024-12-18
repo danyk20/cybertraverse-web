@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
+import hero from "/hero.png"
 
 const Hero = () => {
   return (
@@ -6,7 +7,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: "url('/lovable-uploads/0c20bae5-a7f6-4854-956b-327bfaaced08.png')",
+          backgroundImage: `url(${hero})`,
         }}
       >
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>

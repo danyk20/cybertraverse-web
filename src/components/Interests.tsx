@@ -1,6 +1,7 @@
 import { Shield, TrendingUp, Plane } from "lucide-react";
 import InterestCard from "./InterestCard";
 import Experience from "@/components/Experience.tsx";
+import background from "/background.mp4";
 
 const Interests = () => {
   return (
@@ -8,7 +9,7 @@ const Interests = () => {
         {/* Background video */}
         <video
             className="absolute top-0 left-0 w-full h-full object-cover"
-            src="/background.mp4"
+            src={background}
             autoPlay
             loop
             muted

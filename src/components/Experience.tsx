@@ -2,6 +2,7 @@ import {Card, CardContent} from "@/components/ui/card";
 import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
 import {useCallback, useEffect, useState} from "react";
+import roll_down from "/roll_down.png";
 
 interface ExperienceItem {
     title: string;
@@ -189,9 +190,9 @@ const Experience = () => {
                         background: "opacity-70",
                     }}
                 >
-                    <img src="/roll_down.png" alt="Roll Down" className="w-6 h-6"/>
+                    <img src={roll_down} alt="Roll Down" className="w-6 h-6"/>
                     <span className="relative z-10">My Experience {flags[currentFlagIndex]}</span>
-                    <img src="/roll_down.png" alt="Roll Down" className="w-6 h-6"/>
+                    <img src={roll_down} alt="Roll Down" className="w-6 h-6"/>
                 </motion.button>
             </div>
         );
