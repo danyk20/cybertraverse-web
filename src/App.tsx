@@ -14,7 +14,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/cybertraverse-web" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
