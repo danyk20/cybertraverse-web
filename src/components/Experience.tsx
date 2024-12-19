@@ -169,7 +169,7 @@ const Experience = () => {
         return (
             <div className="relative w-screen h-screen flex items-center justify-center overflow-hidden">
                 <motion.button
-                    className="rounded-full text-3xl font-bold text-center text-white inset-0 backdrop-blur-lg flex items-center justify-center space-x-2" // Added space-x-2 for spacing between text and image
+                    className="rounded-full text-3xl font-bold text-center text-white inset-0 backdrop-blur-lg flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-primary/80"
                     animate={{
                         x: ["0%", isMobile ? "0%": "180%", "0%"],
                         y: ["-350%", isMobile ? "-350" : "-460%", "-350%"],
