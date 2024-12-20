@@ -1,5 +1,6 @@
 import BlogPostLayout from "@/components/BlogPostLayout";
 import { Plane } from "lucide-react";
+import hidden_gems from "/Hidden_Gems.jpg";
 
 const Travel = () => {
   const articles = [
@@ -7,7 +8,7 @@ const Travel = () => {
       title: "Hidden Gems in Europe",
       date: "TBA",
       description: "Will be published soon",
-      imageUrl: "public/hidden_gems.jpg",
+      imageUrl: `${hidden_gems}`,
     }
   ];
   return (
