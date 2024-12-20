@@ -2,10 +2,19 @@ import BlogPostLayout from "@/components/BlogPostLayout";
 import { Plane } from "lucide-react";
 
 const Travel = () => {
+  const articles = [
+    {
+      title: "Hidden Gems in Europe",
+      date: "TBA",
+      description: "Will be published soon",
+      imageUrl: "public/hidden_gems.jpg",
+    }
+  ];
   return (
     <BlogPostLayout
       title="Travel & Technology"
       icon={<Plane className="w-16 h-16 text-primary" />}
+      articles={articles}
       content={
         <>
           <h2>The Digital Transformation of Travel</h2>
