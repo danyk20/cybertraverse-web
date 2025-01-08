@@ -3,6 +3,7 @@ import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
 import {useCallback, useEffect, useState} from "react";
 import roll_down from "/roll_down.png";
+import click from "/click.png";
 
 interface ExperienceItem {
     title: string;
@@ -133,19 +134,6 @@ const Experience = () => {
     const flags = ["🇨🇭", "🇨🇿", "🇺🇸", "🇪🇪", "🇩🇪", "🇬🇧", "🇸🇰"];
     const [currentFlagIndex, setCurrentFlagIndex] = useState(0);
     const [scaleUp, setScaleUp] = useState(false);
-    const [width, setWidth] = useState<number>(window.innerWidth);
-
-    function handleWindowSizeChange() {
-        setWidth(window.innerWidth);
-    }
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        }
-    }, []);
-
-    const isMobile = width <= 768;
 
     const cycleFlag = useCallback(() => {
         setCurrentFlagIndex((prevIndex) => (prevIndex + 1) % flags.length);
@@ -154,46 +142,41 @@ const Experience = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setScaleUp(true);
-            setTimeout(() => {}, 1250)
+            setTimeout(() => {}, 750)
             cycleFlag();
             setTimeout(() => {
                 setScaleUp(false);
-            }, 250)
+            }, 750)
         }, 2000);
 
         return () => clearInterval(interval); // Clean up on unmount
-    }, [cycleFlag]);
+    }, [cycleFlag])
+
 
 
     if (!isVisible) {
         return (
             <div className="relative w-screen h-screen flex items-center justify-center overflow-hidden">
-                <motion.button
-                    className="rounded-full text-3xl font-bold text-center text-white inset-0 backdrop-blur-lg flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-primary/80"
-                    animate={{
-                        x: ["0%", isMobile ? "0%": "180%", "0%"],
-                        y: ["-350%", isMobile ? "-350" : "-460%", "-350%"],
-                        scale: scaleUp ? 1 : 1.3,
-                    }}
-                    transition={{
-                        duration: 20,
-                        ease: "linear",
-                        repeat: Infinity,
-                        scale: {
-                            duration: 0.5,
-                        },
-                    }}
+                <button
+                    className="absolute top-14 left-1/2 transform -translate-x-1/2 rounded-full text-3xl font-bold text-center text-white backdrop-blur-lg flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-primary/80"
                     onClick={() => {
                         setIsVisible(true);
                     }}
-                    style={{
-                        background: "opacity-70",
-                    }}
                 >
                     <img src={roll_down} alt="Roll Down" className="w-6 h-6"/>
-                    <span className="relative z-10">My Experience {flags[currentFlagIndex]}</span>
+                    <span className="relative z-10">List my experience {flags[currentFlagIndex]}</span>
                     <img src={roll_down} alt="Roll Down" className="w-6 h-6"/>
-                </motion.button>
+                    <img
+                        src={click}
+                        alt="Click"
+                        style={{
+                            transform: scaleUp ? 'scale(1.5)' : 'scale(0.75)',
+                            transition: 'transform 1.25s ease-in-out',
+                        }}
+                        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 mr-4"
+                    />
+                </button>
+
             </div>
         );
     }
@@ -203,7 +186,7 @@ const Experience = () => {
             <section className="py-12 px-4 relative">
                 <div className="max-w-5xl mx-auto">
                     <div className="flex justify-between items-center mb-12">
-                        <h2 className="text-3xl font-bold text-center text-white">Experience</h2>
+                        <h2 className="text-3xl font-bold text-center text-white">My Experiences: </h2>
                         <button
                             onClick={() => setIsVisible(false)}
                             className="text-primary hover:text-primary/80 transition-colors rounded-full bg-gray-700 opacity-70 px-4 py-2"
