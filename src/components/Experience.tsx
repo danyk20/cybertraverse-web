@@ -173,7 +173,7 @@ const Experience = () => {
                             transform: scaleUp ? 'scale(1.5)' : 'scale(0.75)',
                             transition: 'transform 1.25s ease-in-out',
                         }}
-                        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 mr-4"
+                        className=" opacity-50 absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 mr-4"
                     />
                 </button>
 
