@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Cybersecurity from "./pages/Cybersecurity";
 import Finance from "./pages/Finance";
 import Travel from "./pages/Travel";
+import CyberBlogPost from "./pages/CyberBlogPost";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
                     <Route path="/cybertraverse-web" element={<Index/>}/>
                     <Route path="/" element={<Index/>}/>
                     <Route path="/cybersecurity" element={<Cybersecurity/>}/>
+                    <Route path="/cybersecurity/blog/:id" element={<CyberBlogPost/>}/>
                     <Route path="/finance" element={<Finance/>}/>
                     <Route path="/travel" element={<Travel/>}/>
                 </Routes>

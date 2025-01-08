@@ -13,9 +13,10 @@ interface BlogPostLayoutProps {
     description: string;
     imageUrl: string;
   }[];
+  onReadMore?: () => void;
 }
 
-const BlogPostLayout = ({ title, content, icon, articles }: BlogPostLayoutProps) => {
+const BlogPostLayout = ({ title, content, icon, articles, onReadMore }: BlogPostLayoutProps) => {
   const navigate = useNavigate();
 
   return (
@@ -69,7 +70,10 @@ const BlogPostLayout = ({ title, content, icon, articles }: BlogPostLayoutProps)
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <button className="text-primary hover:text-primary/80 transition-colors text-sm">
+                    <button 
+                      onClick={onReadMore}
+                      className="text-primary hover:text-primary/80 transition-colors text-sm"
+                    >
                       Read More →
                     </button>
                   </CardContent>
