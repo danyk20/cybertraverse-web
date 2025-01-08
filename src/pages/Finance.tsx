@@ -1,26 +1,15 @@
 import BlogPostLayout from "@/components/BlogPostLayout";
 import { TrendingUp } from "lucide-react";
+import invest from "/invest.jpg";
 
 const Finance = () => {
   const articles = [
     {
-      title: "The Rise of AI in Cybersecurity",
-      date: "April 15, 2024",
-      description: "How artificial intelligence is revolutionizing threat detection and response in cybersecurity.",
-      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
+      title: "Start investing ",
+      date: "TBA",
+      description: "Will be published soon",
+      imageUrl: `${invest}`,
     },
-    {
-      title: "Zero Trust Architecture",
-      date: "April 12, 2024",
-      description: "Understanding the principles and implementation of Zero Trust security models.",
-      imageUrl: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Blockchain Security",
-      date: "April 10, 2024",
-      description: "Exploring security challenges and solutions in blockchain technology.",
-      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80",
-    }
   ];
 
   return (

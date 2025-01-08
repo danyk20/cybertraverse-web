@@ -9,7 +9,7 @@ const Travel = () => {
       date: "TBA",
       description: "Will be published soon",
       imageUrl: `${hidden_gems}`,
-    }
+    },
   ];
   return (
     <BlogPostLayout

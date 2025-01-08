@@ -1,26 +1,15 @@
 import BlogPostLayout from "@/components/BlogPostLayout";
 import { Shield } from "lucide-react";
+import secure_web from "/secure_web.jpg";
 
 const Cybersecurity = () => {
   const articles = [
     {
-      title: "The Rise of AI in Cybersecurity",
-      date: "April 15, 2024",
-      description: "How artificial intelligence is revolutionizing threat detection and response in cybersecurity.",
-      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80",
+      title: "How I Built a Secure Website for Free: My Step-by-Step Journey",
+      date: "January 10, 2025",
+      description: "After months of work, I’m sharing how you can build and deploy a secure website in minutes using AI—at zero cost!",
+      imageUrl: `${secure_web}`,
     },
-    {
-      title: "Zero Trust Architecture",
-      date: "April 12, 2024",
-      description: "Understanding the principles and implementation of Zero Trust security models.",
-      imageUrl: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Blockchain Security",
-      date: "April 10, 2024",
-      description: "Exploring security challenges and solutions in blockchain technology.",
-      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80",
-    }
   ];
 
   return (
