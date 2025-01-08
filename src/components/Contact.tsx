@@ -8,7 +8,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-bold text-center mb-12 text-white">
                     Get in Touch
                 </h2>
-                <div className="flex justify-center space-x-8">
+                <div className="flex justify-center space-x-4 md:space-x-6 lg:space-x-8">
                     {[
                         {icon: Facebook, href: "https://www.facebook.com/daniel.kosc/", label: "Facebook"},
                         {icon: Twitter, href: "https://x.com/Daniel4bike", label: "Twitter"},
