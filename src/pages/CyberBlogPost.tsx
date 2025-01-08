@@ -1,9 +1,28 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Shield } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const CyberBlogPost = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  // In a real application, you would fetch the blog post data based on the ID
+  // For now, we'll just show the example post for ID 1
+  if (id !== "1") {
+    return (
+      <div className="min-h-screen bg-[#1A1F2C] text-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Blog Post Not Found</h1>
+          <button
+            onClick={() => navigate("/cybersecurity")}
+            className="text-primary hover:text-primary/80 transition-colors"
+          >
+            Return to Cybersecurity
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#1A1F2C] text-white">

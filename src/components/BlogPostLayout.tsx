@@ -8,15 +8,16 @@ interface BlogPostLayoutProps {
   content: React.ReactNode;
   icon: React.ReactNode;
   articles: {
+    id: number;
     title: string;
     date: string;
     description: string;
     imageUrl: string;
   }[];
-  onReadMore?: () => void;
+  category: string;
 }
 
-const BlogPostLayout = ({ title, content, icon, articles, onReadMore }: BlogPostLayoutProps) => {
+const BlogPostLayout = ({ title, content, icon, articles, category }: BlogPostLayoutProps) => {
   const navigate = useNavigate();
 
   return (
@@ -47,12 +48,12 @@ const BlogPostLayout = ({ title, content, icon, articles, onReadMore }: BlogPost
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article, index) => (
+            {articles.map((article) => (
               <motion.div
-                key={index}
+                key={article.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: article.id * 0.1 }}
               >
                 <Card className="overflow-hidden h-full bg-card hover:bg-card/80 transition-colors cursor-pointer">
                   <div className="aspect-video relative overflow-hidden">
@@ -71,7 +72,7 @@ const BlogPostLayout = ({ title, content, icon, articles, onReadMore }: BlogPost
                   </CardHeader>
                   <CardContent>
                     <button 
-                      onClick={onReadMore}
+                      onClick={() => navigate(`/${category}/blog/${article.id}`)}
                       className="text-primary hover:text-primary/80 transition-colors text-sm"
                     >
                       Read More →
