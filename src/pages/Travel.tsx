@@ -5,6 +5,7 @@ import hidden_gems from "/Hidden_Gems.jpg";
 const Travel = () => {
     const articles = [
         {
+            id: 1,
             title: "Hidden Gems in Europe",
             date: "TBA",
             description: "Will be published soon",
@@ -16,6 +17,7 @@ const Travel = () => {
             title="Travel & Explore"
             icon={<Plane className="w-16 h-16 text-primary"/>}
             articles={articles}
+            category="travel"
             content={
                 <>
                     <h2>Traveling is one of the most enriching experiences, offering a chance to relax, explore new

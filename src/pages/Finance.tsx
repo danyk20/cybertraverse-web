@@ -5,6 +5,7 @@ import invest from "/invest.jpg";
 const Finance = () => {
     const articles = [
         {
+            id: 1,
             title: "Start investing ",
             date: "TBA",
             description: "Will be published soon",
@@ -17,6 +18,7 @@ const Finance = () => {
             title="Financial Technology Trends"
             icon={<TrendingUp className="w-16 h-16 text-primary"/>}
             articles={articles}
+            category="finance"
             content={
                 <>
                     <h2>Financial education is crucial, even for those with high salaries, as understanding how money
