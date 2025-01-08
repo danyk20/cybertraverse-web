@@ -24,7 +24,7 @@ const Hero = () => {
             Hi, I'm <span className="text-primary">Daniel Košč</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            IT Professional specializing in Cybersecurity, Finance, and exploring the whole world one commit at a time.
+              Scaling new heights in cybersecurity and software development, just as I conquered Alpine peaks, I thrive on tackling the toughest challenges. With experience spanning government, private, and nonprofit sectors across multiple countries, I bring a global perspective to innovative solutions.
           </p>
         </motion.div>
       </div>
