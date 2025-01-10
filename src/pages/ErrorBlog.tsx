@@ -29,7 +29,7 @@ const ErrorBlog: React.FC<ErrorBlogProps> = ({ redirectPath, category }) => {
                     </motion.div>
                     <h2 className="text-2xl font-bold text-white mb-4">Oops! Page Not Available</h2>
                     <p className="text-gray-400 mb-8">
-                        This blog post is not publicly available at the moment. Please check back later or explore our other articles.
+                        This blog post is not publicly available at the moment. Please check back later or explore my other articles.
                     </p>
                     <button
                         onClick={() => navigate(redirectPath)}
