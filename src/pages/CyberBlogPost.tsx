@@ -13,7 +13,7 @@ const CyberBlogPost = () => {
         const Blog = await import(`./cyber/${id}.tsx`);
         setBlogComponent(() => Blog.default);
       } catch (error) {
-        console.error(`Error loading blog post cyber${id}:`, error);
+        console.error(`Error loading blog post cyber/${id}:`, error);
         setBlogComponent(() => () => <div>Blog post not found.</div>);
       }
     };
