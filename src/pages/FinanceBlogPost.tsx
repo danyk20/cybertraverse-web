@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import ErrorBlog from './ErrorBlog';
+import Contact from "@/components/Contact.tsx";
 
 const FinanceBlogPost = () => {
   const { id } = useParams();
@@ -28,7 +29,12 @@ const FinanceBlogPost = () => {
     );
   }
 
-  return <BlogComponent />;
+  return (
+      <div>
+        <BlogComponent/>
+        <Contact></Contact>
+      </div>
+  );
 };
 
 export default FinanceBlogPost;
