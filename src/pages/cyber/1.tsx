@@ -206,9 +206,8 @@ const Cyber1 = () => {
                                     </code>
                                 </pre>
                             </li>
-                            <li>Update <code className="text-sm font-mono text-gray-300">package.json</code> - you can
-                                find it on very top of the file usually
-                                around line 7:
+                            <li>Update <code className="text-sm font-mono text-gray-300">package.json</code> file,
+                                typically located near the top of the file, around line 7. Insert the following lines:
                                 <pre
                                     className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
                                     <code className="text-sm font-mono text-gray-300">
@@ -309,14 +308,14 @@ const Cyber1 = () => {
                             </li>
                             <li>
                                 <strong>Configure the Custom Domain in Your GitHub Pages Deployment Settings:</strong>
-                                <p>Update <code className="text-sm font-mono text-gray-300">package.json</code> - you
-                                    can find it on very top of the file usually around line 7:</p>
+                                <p>Update <code className="text-sm font-mono text-gray-300">package.json</code> file,
+                                    typically located near the top of the file, around line 7. Insert the following
+                                    cname flag with your custom domain name:</p>
                                 <pre
                                     className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
                                     <code className="text-sm font-mono text-gray-300">
 {`  "scripts": {
         ...
-        "predeploy": "npm run build",
         "deploy": "gh-pages -d dist --cname <your.domain>"
         }`}
 
