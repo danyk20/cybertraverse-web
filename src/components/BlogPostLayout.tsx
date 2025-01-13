@@ -55,7 +55,7 @@ const BlogPostLayout = ({ title, content, icon, articles, category }: BlogPostLa
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: article.id * 0.1 }}
               >
-                <Card className="overflow-hidden h-full bg-card hover:bg-card/80 transition-colors cursor-pointer">
+                <Card className="overflow-hidden h-full bg-[#1A1F2C] hover:bg-card/80 transition-colors cursor-pointer">
                   <div className="aspect-video relative overflow-hidden">
                     <img
                       src={article.imageUrl}

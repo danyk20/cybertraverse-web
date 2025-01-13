@@ -3,7 +3,7 @@ import {Facebook, Twitter, Linkedin, Mail, Github} from "lucide-react";
 
 const Contact = () => {
     return (
-        <section className="py-20 bg-card">
+        <section className="py-20 bg-[#1A1F2C]">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-12 text-white">
                     Get in Touch

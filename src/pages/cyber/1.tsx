@@ -342,7 +342,7 @@ const Cyber1 = () => {
                             </li>
                         </ol>
 
-                        <div className="bg-card p-6 rounded-lg mb-8">
+                        <div className="bg-[#1A1F2C] p-6 rounded-lg mb-8">
                             <h3 className="text-xl font-bold mb-4 text-primary">Troubleshooting Common Issues</h3>
                             <p className="italic">
                                 Building and deploying a website isn't always smooth sailing. Here are two most

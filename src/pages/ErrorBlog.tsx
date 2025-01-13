@@ -18,7 +18,7 @@ const ErrorBlog: React.FC<ErrorBlogProps> = ({ redirectPath, category }) => {
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-md w-full"
             >
-                <div className="bg-card rounded-lg p-8 text-center">
+                <div className="bg-[#1A1F2C] rounded-lg p-8 text-center">
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}

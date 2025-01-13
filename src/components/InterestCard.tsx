@@ -18,7 +18,7 @@ const InterestCard = ({ title, description, icon: Icon, delay, route }: Interest
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="bg-card p-6 rounded-lg hover:shadow-lg hover:shadow-primary/80 transition-all duration-300 cursor-pointer"
+      className="bg-[#1A1F2C] p-6 rounded-lg hover:shadow-lg hover:shadow-primary/80 transition-all duration-300 cursor-pointer"
       onClick={() => navigate(route)}
     >
       <Icon className="w-12 h-12 text-primary mb-4" />
