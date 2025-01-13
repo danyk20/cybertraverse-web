@@ -20,7 +20,6 @@ const App = () => (
             <Sonner/>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/cybertraverse-web" element={<Index/>}/>
                     <Route path="/" element={<Index/>}/>
                     <Route path="/cybersecurity" element={<Cybersecurity/>}/>
                     <Route path="/cybersecurity/blog/:id" element={<CyberBlogPost/>}/>

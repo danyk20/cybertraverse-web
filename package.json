@@ -1,5 +1,5 @@
 {
-  "homepage": "https://danyk20.github.io/cybertraverse-web/",
+  "homepage": "https://danielkosc.eu/",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.2",
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --cname danielkosc.eu"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
