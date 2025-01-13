@@ -7,7 +7,7 @@ const Cybersecurity = () => {
         {
             id: 1,
             title: "How I Built a Secure Website for Free: My Step-by-Step Journey",
-            date: "January 10, 2025",
+            date: "January 13, 2025",
             description: "After months of work, I'm sharing how you can build and deploy a secure website in minutes using AI—at zero cost!",
             imageUrl: `${secure_web}`,
         },
