@@ -308,19 +308,32 @@ const Cyber1 = () => {
                                 </pre>
                             </li>
                             <li>
-                                <strong>Configure the Custom Domain in Your GitHub Pages Settings:</strong>
+                                <strong>Configure the Custom Domain in Your GitHub Pages Deployment Settings:</strong>
+                                <p>Update <code className="text-sm font-mono text-gray-300">package.json</code> - you
+                                    can find it on very top of the file usually around line 7:</p>
+                                <pre
+                                    className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                    <code className="text-sm font-mono text-gray-300">
+{`  "scripts": {
+        ...
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist --cname <your.domain>"
+        }`}
+
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                <strong>Wait for Propagation & Deploy:</strong>
                                 <p>Navigate to your repository’s settings on GitHub, scroll down to the GitHub Pages
-                                    section, and enter your custom domain under the “Custom domain” field and click
-                                    save. If everything is in order, you will see a orange "DNS Check in Progress"
-                                    changed to green check mark with "DNS check successful" message.</p>
+                                    section, and check your custom domain under the “Custom domain” field. If everything
+                                    is in order, you will see a orange "DNS Check in Progress" changed to green check
+                                    mark with "DNS check successful" message.</p>
                                 <img
                                     src="/domain.jpg"
                                     alt="GitHub DNS Check in Progress"
                                     className="w-full h-[400px] object-cover rounded-lg mb-8"
                                 />
-                            </li>
-                            <li>
-                                <strong>Wait for Propagation:</strong>
                                 <p>DNS changes can take anywhere from a few minutes to a few hours to take effect. In my
                                     experience, the changes took about half an hour to propagate fully. However, some
                                     users have reported that it can take up to 24 hours for the changes to take effect.
