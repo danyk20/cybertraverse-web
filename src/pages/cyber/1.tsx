@@ -1,6 +1,6 @@
 import React from 'react';
 import {motion} from "framer-motion";
-import {ArrowLeft, Shield} from "lucide-react";
+import {ArrowLeft, Home, Shield} from "lucide-react";
 import {useNavigate} from "react-router-dom";
 
 const Cyber1 = () => {
@@ -12,12 +12,23 @@ const Cyber1 = () => {
                 animate={{opacity: 1, y: 0}}
                 className="container mx-auto px-4 py-8"
             >
-                <button
-                    onClick={() => navigate("/cybersecurity")}
-                    className="flex items-center text-primary hover:text-primary/80 transition-colors mb-8"
-                >
-                    <ArrowLeft className="mr-2"/> Back to Cybersecurity
-                </button>
+                <div className="sticky top-0">
+                    <div className="flex justify-between">
+                        <button
+                            onClick={() => navigate("/cybersecurity")}
+                            className="flex text-primary hover:text-primary/80 transition-colors rounded-full backdrop-blur-lg"
+                        >
+                            <ArrowLeft className="mr-2"/> Back to Cybersecurity
+                        </button>
+
+                        <button
+                            onClick={() => navigate("/")}
+                            className="flex text-primary hover:text-primary/80 transition-colors rounded-full backdrop-blur-lg"
+                        >
+                            <Home className="mr-2"/> Home
+                        </button>
+                    </div>
+                </div>
 
                 <div className="max-w-4xl mx-auto">
                     <div className="flex items-center justify-center mb-8">
@@ -123,9 +134,9 @@ const Cyber1 = () => {
                         </ul>
                         <p className="mb-6">
                             After experimenting with several tools, I found my personal favorite: <a
-                            href="https://lovable.dev">lovable</a>. To clarify, I have no affiliation with them and receive no
-                            support or sponsorship from their team. I simply found their tool to be the best fit for
-                            my needs. It offers a clean, customizable codebase without hidden costs or intrusive
+                            href="https://lovable.dev">lovable</a>. To clarify, I have no affiliation with them and
+                            receive no support or sponsorship from their team. I simply found their tool to be the best
+                            fit for my needs. It offers a clean, customizable codebase without hidden costs or intrusive
                             branding, making it ideal for building the kind of website I had envisioned.
                         </p>
 
@@ -154,19 +165,18 @@ const Cyber1 = () => {
                         <ul className="list-disc pl-6 mb-6 space-y-4">
                             <li><strong>Limited Scope</strong>: One of the key issues I’ve encountered is that changes
                                 made by
-                                <a href="https://lovable.dev">lovable</a> aren’t always applied across all relevant components.
-                                For example, if you
-                                have multiple buttons with similar behavior and you want to update all of them, the tool
-                                might only update one button, leaving the others unchanged. This can be frustrating when
-                                you expect a holistic update and end up having to manually adjust the remaining
-                                components.
+                                <a href="https://lovable.dev">lovable</a> aren’t always applied across all relevant
+                                components. For example, if you have multiple buttons with similar behavior and you want
+                                to update all of them, the tool might only update one button, leaving the others
+                                unchanged. This can be frustrating when you expect a holistic update and end up having
+                                to manually adjust the remaining components.
                             </li>
                             <li><strong>Simple Errors</strong>: Another notable problem is the occurrence of simple
                                 errors. Sometimes,
-                                <a href="https://lovable.dev">lovable</a> misses crucial imports, forgets essential keywords, or
-                                even introduces syntax errors. These mistakes can be perplexing because they are the
-                                kind of issues that a basic Integrated Development Environment (IDE) can easily detect
-                                and suggest fixes for. It’s surprising when a sophisticated tool like <a
+                                <a href="https://lovable.dev">lovable</a> misses crucial imports, forgets essential
+                                keywords, or even introduces syntax errors. These mistakes can be perplexing because
+                                they are the kind of issues that a basic Integrated Development Environment (IDE) can
+                                easily detect and suggest fixes for. It’s surprising when a sophisticated tool like <a
                                     href="https://lovable.dev">lovable</a> overlooks such basic errors.
                             </li>
                             <li><strong>Prompting Skills</strong>: To get the best results from <a
@@ -399,9 +409,9 @@ const Cyber1 = () => {
                         <h2 className="text-2xl font-bold mb-4 text-primary">10. Final Thoughts</h2>
                         <p className="mb-6">
                             Building a personal website is a rewarding journey, filled with learning and growth. With
-                            tools like <a href="https://lovable.dev">lovable</a> and platforms like GitHub Pages, it’s more
-                            accessible than ever. Whether you’re just starting out or refining your existing skills, I
-                            hope my story inspires you to create and share your own web presence.
+                            tools like <a href="https://lovable.dev">lovable</a> and platforms like GitHub Pages, it’s
+                            more accessible than ever. Whether you’re just starting out or refining your existing
+                            skills, I hope my story inspires you to create and share your own web presence.
                         </p>
 
                         <p className="mb-6">
