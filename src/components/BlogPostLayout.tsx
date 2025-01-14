@@ -29,7 +29,7 @@ const BlogPostLayout = ({ title, content, icon, articles, category }: BlogPostLa
       >
         <button
             onClick={() => navigate("/")}
-            className="flex items-center text-primary hover:text-primary/80 transition-colors mb-8 sticky top-0 backdrop-blur-lg rounded-full"
+            className="flex items-center text-primary hover:text-primary/80 transition-colors mb-8 sticky top-5 backdrop-blur-lg rounded-full"
         >
           <ArrowLeft className="mr-2"/> Back to Home
         </button>
