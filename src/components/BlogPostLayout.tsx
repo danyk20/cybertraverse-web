@@ -56,6 +56,7 @@ const BlogPostLayout = ({ title, content, icon, articles, category }: BlogPostLa
                     transition={{delay: article.id * 0.1}}
                 >
                   <Card
+                      onClick={() => navigate(`/${category}/blog/${article.id}`)}
                       className="overflow-hidden h-full bg-[#1A1F2C] hover:bg-card/80 transition-colors cursor-pointer">
                     <div className="aspect-video relative overflow-hidden">
                       <img
@@ -64,7 +65,7 @@ const BlogPostLayout = ({ title, content, icon, articles, category }: BlogPostLa
                           className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <CardHeader>
+                    <CardHeader >
                       <div className="text-primary text-sm mb-2">{article.date}</div>
                       <CardTitle className="text-xl mb-2">{article.title}</CardTitle>
                       <CardDescription className="text-gray-400">
@@ -73,7 +74,6 @@ const BlogPostLayout = ({ title, content, icon, articles, category }: BlogPostLa
                     </CardHeader>
                     <CardContent>
                       <button
-                          onClick={() => navigate(`/${category}/blog/${article.id}`)}
                           className="text-primary hover:text-primary/80 transition-colors text-sm"
                       >
                         Read More →
