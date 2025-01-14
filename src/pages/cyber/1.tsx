@@ -123,7 +123,7 @@ const Cyber1 = () => {
                         </ul>
                         <p className="mb-6">
                             After experimenting with several tools, I found my personal favorite: <a
-                            href="lovable.dev">lovable</a>. To clarify, I have no affiliation with them and receive no
+                            href="https://lovable.dev">lovable</a>. To clarify, I have no affiliation with them and receive no
                             support or sponsorship from their team. I simply found their tool to be the best fit for
                             my needs. It offers a clean, customizable codebase without hidden costs or intrusive
                             branding, making it ideal for building the kind of website I had envisioned.
@@ -132,7 +132,7 @@ const Cyber1 = () => {
                         <h2 className="text-2xl font-bold mb-4 text-primary">5. How It Works</h2>
                         <p className="mb-6">
                             After signing up on <a
-                            href="lovable.dev"
+                            href="https://lovable.dev"
                             className="text-primary hover:text-primary/80 underline decoration-dotted underline-offset-4"
                             target="_blank"
                             rel="noopener noreferrer">
@@ -149,12 +149,12 @@ const Cyber1 = () => {
 
                         <h2 className="text-2xl font-bold mb-4 text-primary">6. Minor Hiccups</h2>
                         <p className="mb-6">
-                            Like any tool, <a href="lovable.dev">lovable</a> isn’t perfect:
+                            Like any tool, <a href="https://lovable.dev">lovable</a> isn’t perfect:
                         </p>
                         <ul className="list-disc pl-6 mb-6 space-y-4">
                             <li><strong>Limited Scope</strong>: One of the key issues I’ve encountered is that changes
                                 made by
-                                <a href="lovable.dev">lovable</a> aren’t always applied across all relevant components.
+                                <a href="https://lovable.dev">lovable</a> aren’t always applied across all relevant components.
                                 For example, if you
                                 have multiple buttons with similar behavior and you want to update all of them, the tool
                                 might only update one button, leaving the others unchanged. This can be frustrating when
@@ -163,14 +163,14 @@ const Cyber1 = () => {
                             </li>
                             <li><strong>Simple Errors</strong>: Another notable problem is the occurrence of simple
                                 errors. Sometimes,
-                                <a href="lovable.dev">lovable</a> misses crucial imports, forgets essential keywords, or
+                                <a href="https://lovable.dev">lovable</a> misses crucial imports, forgets essential keywords, or
                                 even introduces syntax errors. These mistakes can be perplexing because they are the
                                 kind of issues that a basic Integrated Development Environment (IDE) can easily detect
                                 and suggest fixes for. It’s surprising when a sophisticated tool like <a
-                                    href="lovable.dev">lovable</a> overlooks such basic errors.
+                                    href="https://lovable.dev">lovable</a> overlooks such basic errors.
                             </li>
                             <li><strong>Prompting Skills</strong>: To get the best results from <a
-                                href="lovable.dev">lovable</a>, you
+                                href="https://lovable.dev">lovable</a>, you
                                 need to develop a knack for crafting specific and clear prompts. It can be challenging
                                 to pinpoint the exact way to phrase your request to achieve the desired outcome. Through
                                 experience, I’ve found it particularly helpful to indicate precisely where changes
@@ -247,7 +247,7 @@ const Cyber1 = () => {
                                     domain resellers available, and the differences between them are usually minimal.
                                     Pricing is often the most significant factor, especially when considering
                                     promotional offers. I personally purchased my .eu domain from <a
-                                        href="hostcreators.sk"
+                                        href="https://www.hostcreators.sk"
                                         className="text-primary hover:text-primary/80 underline decoration-dotted underline-offset-4"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -399,7 +399,7 @@ const Cyber1 = () => {
                         <h2 className="text-2xl font-bold mb-4 text-primary">10. Final Thoughts</h2>
                         <p className="mb-6">
                             Building a personal website is a rewarding journey, filled with learning and growth. With
-                            tools like <a href="lovable.dev">lovable</a> and platforms like GitHub Pages, it’s more
+                            tools like <a href="https://lovable.dev">lovable</a> and platforms like GitHub Pages, it’s more
                             accessible than ever. Whether you’re just starting out or refining your existing skills, I
                             hope my story inspires you to create and share your own web presence.
                         </p>
