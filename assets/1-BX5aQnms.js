@@ -1,4 +1,4 @@
-import{c as s,u as o,j as e,m as i,A as r,S as a}from"./index-B8shs7Lm.js";/**
+import{c as s,u as o,j as e,m as i,A as r,S as a}from"./index-C9wtbDT4.js";/**
  * @license lucide-react v0.462.0 - ISC
  *
  * This source code is licensed under the ISC license.
@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => ({
 185.199.111.153`})]}),e.jsx("p",{children:"To support IPv6, you should additionally configure AAAA records in your DNS settings:"}),e.jsxs("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:[e.jsx("p",{className:"text-sm text-gray-400 mb-2",children:"# List of GitHUB pages AAAA records as of the time of writing this article "}),e.jsx("code",{className:"text-sm font-mono text-gray-300",children:`2606:50c0:8000::153
 2606:50c0:8001::153
 2606:50c0:8002::153
-2606:50c0:8003::153`})]})]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Configure the Custom Domain in Your GitHub Pages Deployment Settings:"}),e.jsxs("p",{children:["Update ",e.jsx("code",{className:"text-sm font-mono text-gray-300",children:"package.json"})," file, typically located near the top of the file, around line 7. Insert the following cname flag with your custom domain name:"]}),e.jsx("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:e.jsx("code",{className:"text-sm font-mono text-gray-300",children:`...
+2606:50c0:8003::153`})]})]}),e.jsxs("li",{children:[e.jsx("strong",{children:"Configure the Custom Domain in Your GitHub Pages Deployment Settings:"}),e.jsxs("p",{children:["Update ",e.jsx("code",{className:"text-sm font-mono text-gray-300",children:"package.json"})," file, typically located near the top of the file, around line 7. Insert the following cname flag with your custom domain name:"]}),e.jsx("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:e.jsx("code",{className:"text-sm font-mono text-gray-300",children:`  ...
     "homepage": "<your.domain>",  
     "scripts": {
         ...
