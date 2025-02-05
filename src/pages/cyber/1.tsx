@@ -213,10 +213,33 @@ const Cyber1 = () => {
                             GitHub Pages
                         </a> due to
                             its simplicity and zero cost. However, it does come with one limitation: your
-                            repository must be <b>public</b>. Below is a step-by-step guide to deploying your website from your
+                            repository must be <b>public</b>. Below is a step-by-step guide to deploying your website
+                            from your
                             local machine:
                         </p>
                         <ol className="list-decimal pl-6 mb-6 space-y-4">
+                            <li>Update <code className="text-sm font-mono text-gray-300">vite.config.ts</code>:
+                                <pre
+                                    className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                    <code className="text-sm font-mono text-gray-300">
+                                        {`import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => ({
+  base: "./",
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+}));
+`}
+                                    </code>
+                                </pre>
+                            </li>
                             <li>Install GitHub Pages Dependency:
                                 <pre
                                     className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
@@ -226,15 +249,21 @@ const Cyber1 = () => {
                                 </pre>
                             </li>
                             <li>Update <code className="text-sm font-mono text-gray-300">package.json</code> file,
-                                typically located near the top of the file, around line 7. Insert the following lines:
-                                <pre
-                                    className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                typically located near the top of the file, around line 7. Add the following lines,
+                                replacing  <code className="text-sm font-mono text-gray-300">&lt;username&gt;</code>  with your GitHub username and <code className="text-sm font-mono text-gray-300">&lt;repo_name&gt;</code> with your repository
+                                    name:
+                                    <pre
+                                        className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
                                     <code className="text-sm font-mono text-gray-300">
-{`  "scripts": {
+{`  
+    ...
+    "homepage": "https://<username>.github.io/<repo_name>/",
+    "scripts": {
         ...
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
-        }`}
+        }
+    ...`}
 
                                     </code>
                                 </pre>
@@ -253,7 +282,9 @@ const Cyber1 = () => {
                                     <li>Open your repository on GitHub.</li>
                                     <li>Click on the <strong>Settings</strong> tab in the top navigation bar.</li>
                                     <li>In the left-hand menu, select <strong>Pages</strong>.</li>
-                                    <li>Under the <strong>Source</strong> section, choose <strong>Deploy from a branch</strong>.</li>
+                                    <li>Under the <strong>Source</strong> section, choose <strong>Deploy from a
+                                        branch</strong>.
+                                    </li>
                                     <li>Select the <strong>gh-pages</strong> branch from the dropdown menu.</li>
                                     <li>Click <strong>Save</strong> to apply the changes.</li>
                                     <img
@@ -266,7 +297,7 @@ const Cyber1 = () => {
                         </ol>
                         <p className="mb-6">
                             Your website will be live in ~1 min at
-                            https://&lt;username&gt;.github.io/&lt;repo_name&gt;/.
+                            https://&lt;username&gt;.github.io/&lt;repo_name&gt;/ .
                         </p>
 
                         <h2 className="text-2xl font-bold mb-4 text-primary">8. Adding a Custom Domain</h2>
@@ -348,7 +379,9 @@ const Cyber1 = () => {
                                 <pre
                                     className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
                                     <code className="text-sm font-mono text-gray-300">
-{`  "scripts": {
+{`  ...
+    "homepage": "<your.domain>",  
+    "scripts": {
         ...
         "deploy": "gh-pages -d dist --cname <your.domain>"
         }`}
@@ -449,7 +482,7 @@ const Cyber1 = () => {
 
             </motion.div>
         </div>
-    );
+);
 
 };
 
