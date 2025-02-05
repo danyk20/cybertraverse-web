@@ -1,4 +1,4 @@
-import{c as s,u as o,j as e,m as i,A as r,S as a}from"./index-Bh8zc7kd.js";/**
+import{c as s,u as o,j as e,m as i,A as r,S as a}from"./index-DOovIGbs.js";/**
  * @license lucide-react v0.462.0 - ISC
  *
  * This source code is licensed under the ISC license.
@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-`})})]}),e.jsxs("li",{children:["Install GitHub Pages Dependency:",e.jsx("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:e.jsx("code",{className:"text-sm font-mono text-gray-300",children:"npm install gh-pages --save-dev"})})]}),e.jsxs("li",{children:["Update ",e.jsx("code",{className:"text-sm font-mono text-gray-300",children:"package.json"})," file, typically located near the top of the file, around line 7. Insert the following lines based on your github username and repository name:",e.jsx("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:e.jsx("code",{className:"text-sm font-mono text-gray-300",children:`  
+`})})]}),e.jsxs("li",{children:["Install GitHub Pages Dependency:",e.jsx("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:e.jsx("code",{className:"text-sm font-mono text-gray-300",children:"npm install gh-pages --save-dev"})})]}),e.jsxs("li",{children:["Update ",e.jsx("code",{className:"text-sm font-mono text-gray-300",children:"package.json"})," file, typically located near the top of the file, around line 7. Add the following lines, replacing <username> with your GitHub username and <repo_name> with your repository name:",e.jsx("pre",{className:"bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20",children:e.jsx("code",{className:"text-sm font-mono text-gray-300",children:`  
     ...
     "homepage": "https://<username>.github.io/<repo_name>/",
     "scripts": {
