@@ -247,7 +247,22 @@ const Cyber1 = () => {
                                     </code>
                                 </pre>
                             </li>
-
+                            <li>
+                                <strong>Configure GitHub Pages using web GUI:</strong>
+                                <ol className="list-decimal pl-6 mb-6 space-y-4">
+                                    <li>Open your repository on GitHub.</li>
+                                    <li>Click on the <strong>Settings</strong> tab in the top navigation bar.</li>
+                                    <li>In the left-hand menu, select <strong>Pages</strong>.</li>
+                                    <li>Under the <strong>Source</strong> section, choose <strong>Deploy from a branch</strong>.</li>
+                                    <li>Select the <strong>gh-pages</strong> branch from the dropdown menu.</li>
+                                    <li>Click <strong>Save</strong> to apply the changes.</li>
+                                    <img
+                                        src="/github_pages.png"
+                                        alt="GitHub Pages configuration"
+                                        className="w-full h-[400px] object-cover rounded-lg mb-8"
+                                    />
+                                </ol>
+                            </li>
                         </ol>
                         <p className="mb-6">
                             Your website will be live in ~1 min at
