@@ -204,8 +204,17 @@ const Cyber1 = () => {
 
                         <h2 className="text-2xl font-bold mb-4 text-primary">7. Deploying the Website</h2>
                         <p className="mb-6">
-                            Once your website is ready, the next step is deployment. I chose GitHub Pages for its
-                            simplicity and zero cost. Here’s how you can do it from your local machine:
+                            Once your website is complete, the next step is deployment. I opted for <a
+                            href="https://pages.github.com"
+                            className="text-primary hover:text-primary/80 underline decoration-dotted underline-offset-4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub Pages
+                        </a> due to
+                            its simplicity and zero cost. However, it does come with one limitation: your
+                            repository must be <b>public</b>. Below is a step-by-step guide to deploying your website from your
+                            local machine:
                         </p>
                         <ol className="list-decimal pl-6 mb-6 space-y-4">
                             <li>Install GitHub Pages Dependency:
