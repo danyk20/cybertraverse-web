@@ -224,7 +224,7 @@ const Cyber1 = () => {
 {`  "scripts": {
         ...
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "deploy": "gh-pages -d dist"
         }`}
 
                                     </code>
