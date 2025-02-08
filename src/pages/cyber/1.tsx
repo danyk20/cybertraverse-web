@@ -218,7 +218,9 @@ const Cyber1 = () => {
                             local machine:
                         </p>
                         <ol className="list-decimal pl-6 mb-6 space-y-4">
-                            <li>Update <code className="text-sm font-mono text-gray-300">vite.config.ts</code>:
+                            <li>Update <code className="text-sm font-mono text-gray-300">vite.config.ts</code>
+                                replacing <code className="text-sm font-mono text-gray-300">&lt;repo_name&gt;</code>
+                                with your repository name:
                                 <pre
                                     className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
                                     <code className="text-sm font-mono text-gray-300">
@@ -228,7 +230,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "./",
+  base: "/<repo_name>/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -250,10 +252,13 @@ export default defineConfig(({ mode }) => ({
                             </li>
                             <li>Update <code className="text-sm font-mono text-gray-300">package.json</code> file,
                                 typically located near the top of the file, around line 7. Add the following lines,
-                                replacing  <code className="text-sm font-mono text-gray-300">&lt;username&gt;</code>  with your GitHub username and <code className="text-sm font-mono text-gray-300">&lt;repo_name&gt;</code> with your repository
-                                    name:
-                                    <pre
-                                        className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                replacing <code className="text-sm font-mono text-gray-300">&lt;username&gt;</code> with
+                                your GitHub username and <code
+                                    className="text-sm font-mono text-gray-300">&lt;repo_name&gt;</code> with your
+                                repository
+                                name:
+                                <pre
+                                    className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
                                     <code className="text-sm font-mono text-gray-300">
 {`  
     ...
@@ -389,6 +394,27 @@ export default defineConfig(({ mode }) => ({
                                     </code>
                                 </pre>
                             </li>
+
+                            <li>
+                                <strong>Configure base URL of your web:</strong>
+                                <p>The <code className="text-sm font-mono text-gray-300">base</code> attribute in
+                                    the <code className="text-sm font-mono text-gray-300">vite.config.ts</code> file is
+                                    used to specify the base URL for your application when it is deployed. This is
+                                    particularly useful when your application is not served from the root of the domain
+                                    (e.g., https://&lt;your.domain&gt;/) but from a subdirectory (e.g.,
+                                    https://&lt;your.domain&gt/&lt;subdirectory&gt;/).
+
+                                    When you set base: "/", it means your application will assume it is being served
+                                    from the root of the domain (e.g., https://&lt;your.domain&gt;/).</p>
+                                <pre
+                                    className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                    <code className="text-sm font-mono text-gray-300">{`
+...
+    base: "/",
+                                    `}  </code>
+                                </pre>
+                            </li>
+
                             <li>
                                 <strong>Wait for Propagation & Deploy:</strong>
                                 <p>Navigate to your repository’s settings on GitHub, scroll down to the GitHub Pages
@@ -427,6 +453,29 @@ export default defineConfig(({ mode }) => ({
                                     in <code className="text-sm font-mono text-gray-300">package.json </code>
                                     accurately reflects the deployment domain and verify your routes in <code
                                     className="text-sm font-mono text-gray-300">App.tsx</code>.
+                                </li>
+                                <li>
+                                    <strong>Failed to load Images:</strong> If your website is functioning correctly but
+                                    images are not displaying, the issue might be related to the image paths. A common
+                                    solution is to change the image paths from static to dynamic. For example, if
+                                    your image is currently referenced with an static path like:
+                                    <pre
+                                        className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+        <code className="text-sm font-mono text-gray-300">
+            &lt;img src="/images/picture.jpg" alt="Example Image"&gt;
+        </code>
+    </pre>
+                                    Change it to a dynamic path like:
+                                    <pre
+                                        className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+        <code className="text-sm font-mono text-gray-300">
+            &lt;img src= &#123;import.meta.env.BASE_URL + "./images/picture.jpg"&#125; alt="Example Image"&gt;
+        </code>
+    </pre>
+                                    This ensures the browser looks for the image in the correct directory based on <code
+                                    className="text-sm font-mono text-gray-300">base </code>
+                                    attribute in <code
+                                    className="text-sm font-mono text-gray-300">vite.config.ts </code> .
                                 </li>
                             </ul>
                         </div>
@@ -482,7 +531,7 @@ export default defineConfig(({ mode }) => ({
 
             </motion.div>
         </div>
-);
+    );
 
 };
 
