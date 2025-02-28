@@ -1,6 +1,7 @@
 import BlogPostLayout from "@/components/BlogPostLayout";
 import {Shield} from "lucide-react";
 import secure_web from "/secure_web.jpg";
+import tor from "/tor.jpg";
 
 const Cybersecurity = () => {
     const articles = [
@@ -10,6 +11,13 @@ const Cybersecurity = () => {
             date: "January 13, 2025",
             description: "After months of work, I'm sharing how you can build and deploy a secure website in minutes using AI—at zero cost!",
             imageUrl: `${secure_web}`,
+        },
+        {
+            id: 2,
+            title: "Tor Explained: The Secret Path to True Online Anonymity",
+            date: "February 28, 2025",
+            description: "Ever wondered how people stay anonymous online? The Tor Network is one of the most powerful privacy tools available—but is it truly safe? Find out how it works and if it’s right for you.",
+            imageUrl: `${tor}`,
         },
     ];
 
