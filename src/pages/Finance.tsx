@@ -6,9 +6,9 @@ const Finance = () => {
     const articles = [
         {
             id: 1,
-            title: "Start investing ",
-            date: "TBA",
-            description: "Will be published soon",
+            title: "Start investing right now!",
+            date: "March 19, 2025",
+            description: "New to investing? This post breaks it down in simple terms, sharing personal insights and a step-by-step guide to help you get started. Learn the basics, gain confidence, and take your first steps toward building wealth—no prior experience needed!",
             imageUrl: `${invest}`,
         },
     ];
