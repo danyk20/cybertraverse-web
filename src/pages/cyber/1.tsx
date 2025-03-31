@@ -440,7 +440,7 @@ export default defineConfig(({ mode }) => ({
                                 Building and deploying a website isn't always smooth sailing. Here are two most
                                 common issues and how to handle them:
                             </p>
-                            <ul className="list-disc pl-6 ">
+                            <ul className="list-disc pl-6 mb-6 space-y-4">
                                 <li>
                                     <strong>Error Page:</strong> If you encounter an error page, it might mean your DNS
                                     records haven’t propagated yet. DNS changes can take time, sometimes up to 24 hours,
@@ -475,7 +475,128 @@ export default defineConfig(({ mode }) => ({
                                     This ensures the browser looks for the image in the correct directory based on <code
                                     className="text-sm font-mono text-gray-300">base </code>
                                     attribute in <code
-                                    className="text-sm font-mono text-gray-300">vite.config.ts </code> .
+                                    className="text-sm font-mono text-gray-300">vite.config.ts </code>
+                                </li>
+                                <li>
+                                    <strong>404 File not found:</strong> GitHub Pages does not natively support routers
+                                    that rely on the HTML5
+                                    <code className="text-sm font-mono text-gray-300"> pushState </code>
+                                    history API, such as React Router with
+
+                                    <code className="text-sm font-mono text-gray-300"> browserHistory</code>. For
+                                    example, if a user navigates to
+                                    <code
+                                        className="text-sm font-mono text-gray-300"> http://your.domain/data</code>
+                                    , where <code className="text-sm font-mono text-gray-300">/data</code> is a
+                                    frontend route, GitHub Pages will return a 404 error since it is unaware of that
+                                    path. To integrate routing in a project hosted on GitHub Pages, consider the
+                                    following solutions:
+
+
+                                    <ul className="list-disc pl-6 mb-6 space-y-4">
+                                        <li><strong>Use Hash-Based Routing:</strong> Instead of relying on the HTML5
+                                            history API, switch to hash-based routing. If using React Router, replace
+                                            <code className="text-sm font-mono text-gray-300"> BrowserRouter</code> with
+                                            <code className="text-sm font-mono text-gray-300"> HashRouter</code>. This
+                                            approach modifies URLs to include a hash (#), such as
+                                            <code
+                                                className="text-sm font-mono text-gray-300"> http://localhost:5173/cybersecurity/blog/1#/cybersecurity </code>
+                                            instead of
+                                            <code
+                                                className="text-sm font-mono text-gray-300"> https://danielkosc.eu/cybersecurity</code>
+                                            . While the URL becomes more verbose, this solution is simple to
+                                            implement—just update
+                                            the keyword.
+                                        </li>
+                                        <li><strong>Implement a <a
+                                            href="https://github.com/rafgraph/spa-github-pages"
+                                            className="text-primary hover:text-primary/80 underline decoration-dotted underline-offset-4"
+                                            target="_blank"
+                                            rel="noopener noreferrer">
+                                            Redirect for 404
+                                        </a> Errors:</strong> Another approach is to
+                                            configure GitHub Pages to redirect all unknown routes to your
+                                            <code className="text-sm font-mono text-gray-300"> index.html</code>.
+                                            This requires adding a
+                                            <code className="text-sm font-mono text-gray-300"> 404.html</code> file in
+                                            the
+                                            <code className="text-sm font-mono text-gray-300"> public</code> directory
+                                            with a script that redirects users back to newly extended
+                                            <code className="text-sm font-mono text-gray-300"> index.html</code>, where
+                                            it will be handled using the redirect parameters.
+                                            <p><br/></p>
+
+                                            <pre
+                                                className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                                <p>// public/404.html</p>
+                                                <br/>
+                                                <p>// If you're creating a Project Pages site and NOT using a custom domain,
+                                                    <br/>
+                                                    // then set pathSegmentsToKeep to 1 (enterprise users may need to set it
+                                                    <br/>
+                                                    // to &gt; 1). Otherwise, leave pathSegmentsToKeep as 0.</p>
+                                                <code
+                                                    className="text-sm font-mono text-gray-300">
+{`
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 0;
+      
+      var l = window.location;
+      l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+          );
+    </script>
+    ...
+  </head>
+
+  <body>
+    ...
+  </body>
+</html>
+`}
+                                                </code>
+                                            </pre>
+
+                                            <pre
+                                                className="bg-[#2A303C] p-4 rounded-lg overflow-x-auto mb-6 shadow-lg border border-primary/20">
+                                                <p>// index.html</p>
+                                                <br/>
+                                                <code
+                                                    className="text-sm font-mono text-gray-300">
+{`
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      (function(l) {
+          if (l.search[1] === '/' ) {
+              var decoded = l.search.slice(1).split('&').map(function(s) {
+                return s.replace(/~and~/g, '&')
+              }).join('?');
+              window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash
+              );
+            }
+      }(window.location))
+    </script>
+    ...
+  </head>
+
+  <body>
+    ...
+  </body>
+</html>
+`}
+                                                </code>
+                                            </pre>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
